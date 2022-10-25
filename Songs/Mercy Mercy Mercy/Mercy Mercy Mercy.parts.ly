@@ -1,3 +1,10 @@
+\header {
+  title = "Mercy Mercy Mercy"
+  subtitle = ""
+  composer = "Joe Zawinul"
+  meter = ""
+}
+
 notesOne = \relative c,  {
   bes4. bes8 d8 d4 es8 ~es4. es8 g8 g f4
 }
