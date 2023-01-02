@@ -42,6 +42,7 @@ meta = {
       \override Staff.StaffSymbol.color = #(x11-color 'grey70)
       \override Voice.NoteHead.color = #(x11-color 'grey70)
       \override Voice.Stem.color = #(x11-color 'grey70)
+      \override Score.RehearsalMark.direction = #DOWN
 
       \improvisationOn
       \repeat unfold 4 {

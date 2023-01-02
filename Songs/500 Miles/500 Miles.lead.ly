@@ -1,12 +1,23 @@
-
+\version 2.23.81
+\header {
+  title = "500 Miles"
+  subtitle = ""
+  composer = "Hooters"
+  meter = ""
+}
 
 \paper {
   system-system-spacing = #'((padding . 15 ) (basic-distance . 10))
 }
 
+meta = {
+  \time 4/4
+  \tempo 4 = 75
+  \key a \minor % for Malaika 1 whole step higher than original
+}
 
 
-\markup ""
+\markup " "
 
 \score {
   \header {
@@ -16,8 +27,19 @@
 <<
   \chords {
     \set Staff.midiMaximumVolume = #0.15
-    \override ChordName.font-size = #+3
-    % chords here
+     \mark "Intro"
+     {
+        \partial 4 g4 |
+        g2 bes:m
+        c:m bes:
+        c:m bes:m
+        c1m
+        g2 bes:m
+        c:m bes:m
+        c:m bes:m
+        g1
+    }
+
   }
 
   \new Staff \with {
@@ -33,11 +55,12 @@
       \override Score.RehearsalMark.direction = #DOWN
 
       \improvisationOn
-      \repeat unfold 2 {
+      \repeat unfold 4 {
         d1 d1 d1 d1 \break
       }
       \improvisationOff
-}  }
+    }
+  }
 
 
 >>
@@ -49,7 +72,3 @@
   }
   \midi {  }
 }
-
-% tutorial https://lilypond.org/doc/v2.23/Documentation/learning/
-% snippets https://lilypond.org/doc/v2.23/Documentation/snippets/
-% reference https://lilypond.org/doc/v2.23/Documentation/notation/

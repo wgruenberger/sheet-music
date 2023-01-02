@@ -1,10 +1,25 @@
+\version "2.18.2"
 
+\header {
+  title = "Simple Blues"
+  subtitle = ""
+  composer = ""
+  meter = "SHUFFLE Feel"
+}
 
 \paper {
   system-system-spacing = #'((padding . 15 ) (basic-distance . 10))
 }
 
+\markup {
+    \vspace #2
+}
 
+meta = {
+ \time 4/4
+ % \tempo 4 = 83
+ \key c \major
+}
 
 \markup ""
 
@@ -15,9 +30,16 @@
 
 <<
   \chords {
+
     \set Staff.midiMaximumVolume = #0.15
-    \override ChordName.font-size = #+3
-    % chords here
+    \override ChordName.font-size = #+4
+
+     \transpose c bes {
+      c1:7 c1:7 c1:7 c1:7
+      f1:7 f1:7 c1:7 c1:7
+      g1:7 f1:7 c1:7 g1:7
+    }
+
   }
 
   \new Staff \with {
@@ -31,11 +53,15 @@
       \override Voice.NoteHead.color = #(x11-color 'grey70)
       \override Voice.Stem.color = #(x11-color 'grey70)
       \override Score.RehearsalMark.direction = #DOWN
+      \override Score.RehearsalMark.color = #red
+      \override Score.RehearsalMark.font-size = #+4
 
       \improvisationOn
-      \repeat unfold 2 {
-        d1 d1 d1 d1 \break
-      }
+
+        \mark "       I" d1 d1 d1 d1 \break
+        \mark "    IV" d1 d1 \mark "           I" d1 d1 \break
+        \mark "  V" d1 \mark "           IV" d1 \mark "           I" d1 \mark "          V"  d1 \break
+
       \improvisationOff
 }  }
 
